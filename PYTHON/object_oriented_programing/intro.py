@@ -39,18 +39,24 @@ class House:
     owner=""
     location=""
     architect= "KIMANI"
+
+    #js  construtor
+    def __init__(self, owner, location):
+        print("Class house created. initializer called")
+        self.owner=owner
+        self.location=location
     def config(self, owner, location):
         self.owner=owner
         self.location=location
     def print_self(self):
         #this<the object itself> self<object>
         print(self)
-        print(self.__dict__)
+        print(self.__dict__)#dictionary of the object properties.<print all the properties>
 
 #when acess object properties use dot notation.
 #Bracker notation is for dictionary.
-marcrine_house=House()
-marcrine_house.config(owner="marcrine", location="kikuyu")
+marcrine_house=House(owner="marcrine", location="kikuyu")
+#marcrine_house.config(owner="marcrine", location="kikuyu")
 print(f"Macrines House Owner{marcrine_house.owner}")
 print(f"Macrines House Location{marcrine_house.location}")
 print(f"Macrines House Bedrooms{marcrine_house.bedrooms}")
@@ -60,10 +66,10 @@ print(f"Macrines House Area{marcrine_house.area}")
 print(f"Macrines House Architect{marcrine_house.architect}")
 marcrine_house.print_self()
 print("---------------------------------------------------")
-daniel_house=House()
+daniel_house=House(owner="daniel", location="Murang'a")
 #daniel_house.owner="daniel"
 #daniel_house.location="Murang'a"
-daniel_house.config(owner="daniel", location="Murang'a")
+daniel_house.config(owner="daniel", location="Murang'a")#__init__ method is called when the object is created.
 print(f"Daniels House Owner{daniel_house.owner}")
 print(f"Daniels House Location{daniel_house.location}")
 print(f"Daniels House Bedrooms{daniel_house.bedrooms}")
