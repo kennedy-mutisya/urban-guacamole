@@ -72,7 +72,9 @@ class BankAccount:
         print(f"if you take a loan of {amount} ,interest rate per year {interest_per_year}")
         print(f"Total interest {interest_total} and total to pay {total} after {year} years")
 
+        #---------------------
         #class method
+        #class itself
         #-----------------------
     @classmethod
     def add_client(cls):
@@ -82,6 +84,10 @@ john=BankAccount(name="John Mwangi", balance=0, account_no="223344223")
 #samuel=BankAccount(name="Samuel Mwangi", balance=0, account_no="223344224")
 #print("john balance is", john.balance)
 #john.show_account_details()
-print("bank name is", BankAccount.bank_name)#class property
-print("clients", BankAccount.clients)#class property
-print(john.account_no)#john is an instance of the class
+# print("bank name is", BankAccount.bank_name)#class property
+# print("clients", BankAccount.clients)#class property
+# print(john.account_no)#john is an instance of the class
+print("Total clients", BankAccount.clients)
+samuel=BankAccount(name="Samuel Mwangi", balance=0, account_no="223344224")
+print("Total clients", BankAccount.clients)
+BankAccount.calculate_interest(50000, 5)
