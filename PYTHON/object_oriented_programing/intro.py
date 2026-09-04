@@ -8,8 +8,10 @@ work easy. by using principles of oop we can make our code more readable, reusab
 1.Encapsulation
 -keeping data and methods <functions>inside a class.
 while restricting direct access to internal data.
+()-> _init__, methods, whai is a property
 2.Abstraction
 -hiding unnecessary complexity or implrtration of details.
+->getters and setters. class methods.
 3.Inheritance
 -one class to reuse or extend properties 
 and methods of another class.
