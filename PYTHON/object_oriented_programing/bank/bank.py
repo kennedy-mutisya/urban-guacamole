@@ -11,13 +11,27 @@ create account
 deposit
 withdraw
 """
+""" 
+static <it does not change>.<class properties>.<Belong to class>
+Static Method<>. class method. <function belong to class>
 
+why would you want to use class properties?
+"""
 class BankAccount:
+    clients=0 #static property
+    bank_name="Post Bank" #static property
 
     def __init__(self,name, balance, account_no):
         self.name = name
         self._balance = balance
         self.account_no = account_no
+        #BannkAccount.clients=BankAccount.clients+1
+        #self.__class__.clients=self.__class__.clients+1
+        #self.__class__.add_client()
+        BankAccount.add_client()
+        #self.__class__.bank_name=name_bank
+        #self.__class__.clients+=1
+        #BankAccount.clients +=self.clients
 
     #data i read
     @property
@@ -46,6 +60,28 @@ class BankAccount:
         print(f"Account Balance: {self.balance}")
         print(f"Account Number: {self.account_no}")
 
+    #-------------------
+    #static method.<class method><cls> @staticmethod->
+    #-------------------
+    @staticmethod
+    def calculate_interest(amount, year):
+        rate=10
+        interest_per_year=amount*(rate/100)
+        interest_total=interest_per_year*year
+        total=amount+interest_total
+        print(f"if you take a loan of {amount} ,interest rate per year {interest_per_year}")
+        print(f"Total interest {interest_total} and total to pay {total} after {year} years")
+
+        #class method
+        #-----------------------
+    @classmethod
+    def add_client(cls):
+        cls.clients=cls.clients+1
+
 john=BankAccount(name="John Mwangi", balance=0, account_no="223344223")
-print("john balance is", john.balance)
+#samuel=BankAccount(name="Samuel Mwangi", balance=0, account_no="223344224")
+#print("john balance is", john.balance)
 #john.show_account_details()
+print("bank name is", BankAccount.bank_name)#class property
+print("clients", BankAccount.clients)#class property
+print(john.account_no)#john is an instance of the class
