@@ -2,6 +2,9 @@
 shape class.
 properties and methods common to all shapes
 
+--->private, public <--
+---->getters and setters <hide the propertis <private>>
+
 """
 class Shape:
     def __init__(self, shape_name):
@@ -16,6 +19,16 @@ class Shape:
         print(f"Area: {self.area()}")
         print(f"Perimeter: {self.perimeter()}")
         print("------------------------")
+
+        #method area
+    def area(self):
+        print(f"for shape ${self.shape_name} area calculation is missing")
+    def perimeter(self):
+        print(f"for shape ${self.shape_name} perimeter calculation is missing")
+
+class Triangle(Shape):
+    def __init__(self, base,height):
+        super().__init__(shape_name="Triangle")        
 
 #inheritance class name (clsass inheriting from)
 
@@ -53,3 +66,5 @@ s1.display_info()
 # print("area is", r1.area())#rectangle area<>
 # r1.describe()#shape
 # r1.display_info()#shape
+t1=Triangle(20,30)
+t1.area()#Triangle -->shape
